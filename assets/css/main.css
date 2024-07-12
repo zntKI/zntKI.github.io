@@ -148,7 +148,7 @@ a.special:not(.button):before {
 	text-rendering: auto;
 	line-height: 1;
 	text-transform: none !important;
-	font-family: 'Font Awesome 5 Free';
+	font-family: 'Font Awesome 5 Brands';
 	font-weight: 900;
 }
 
@@ -156,7 +156,7 @@ a.special:not(.button):before {
 	transition: background-color 0.2s ease-in-out;
 	border-radius: 100%;
 	border: solid 2px rgba(255, 255, 255, 0.125);
-	content: '\f105';
+	/* content: '\f105'; */
 	display: inline-block;
 	font-size: 1.25em;
 	height: 2em;
@@ -985,6 +985,10 @@ button:disabled,
 	color: #edae49;
 }
 
+.features article .special::before {
+	content: '\f09b';
+}
+
 .features article p {
 	margin: 0 0 2em 0;
 }
@@ -1742,6 +1746,11 @@ body.is-preload #banner p {
 
 .wrapper.spotlight .content a {
 	color: #edae49;
+}
+
+.wrapper.spotlight .content a::before {
+	font-family: 'Font Awesome 5 Free';
+	content: '\f1c1';
 }
 
 .wrapper.spotlight .inner p {
