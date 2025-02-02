@@ -1,0 +1,20 @@
+// Color variables
+$bg-color: #031725; //#001d3d
+$main-text-color: #FFFFFF;
+$secondary-text-color: #edae49; //#EDAE49
+$secondary-text-color-darker: #bd8f43;
+
+// Font variables
+$main-font: 'Raleway', sans-serif;
+$secondary-font: "IBM Plex Mono", monospace;
+
+$default-font-size: 1rem;
+$font-sizes: (
+    "p-font-size": 1.5 * $default-font-size,
+    "h6-font-size": 2 * $default-font-size,
+    "h5-font-size": 3 * $default-font-size,
+    "h4-font-size": 4 * $default-font-size,
+    "h3-font-size": 5 * $default-font-size,
+    "h2-font-size": 6 * $default-font-size,
+    "h1-font-size": 7 * $default-font-size
+);

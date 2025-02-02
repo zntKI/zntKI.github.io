@@ -1,0 +1,12 @@
+#spotlight {
+    position: absolute;
+    width: 1px;
+    /* Adjust the size of the spotlight */
+    height: 1px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    /* Adjust the spotlight brightness */
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 1000px 80px rgba(237, 174, 73, 0.5);
+}

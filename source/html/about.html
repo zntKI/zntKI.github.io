@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/source/css/about.css" />
+    <link rel="stylesheet" href="/assets/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="/assets/prismjs/prism.css" />
+    <script src="/assets/js/jquery-3.7.1.min.js"></script>
+    <script src="/assets/js/particles.js"></script>
+    <script>
+        particlesJS.load('particles-js', '/assets/json/particles.json', function () {
+            console.log('particles.js loaded - callback');
+        });
+    </script>
+    <title>About Me</title>
+</head>
+
+<body style="position: relative;">
+    <div id="particles-js"></div>
+    <div id="spotlight"></div>
+    <header class="header">
+        <nav class="title-cont">
+            <div class="blur-background"></div>
+            <div class="possible-title-cont">
+                <h6 class="possible-title"><a href="/source/html/projects.html">// Projects</a></h6>
+                <hr>
+            </div>
+            <div id="current-title-cont">
+                <h4 id="current-title">// About Me</h4>
+            </div>
+            <div class="possible-title-cont">
+                <h6 class="possible-title"><a href="/source/html/contact.html">// Contact Me</a></h6>
+                <hr>
+            </div>
+        </nav>
+    </header>
+    <div class="content">
+        <main>
+            <div class="main-cont">
+                <pre>
+                    <code class="language-cpp line-numbers">
+                        #include &lt;iostream&gt;
+                        #include &lt;string&gt;
+                        #include &lt;vector&gt;
+                        #include &lt;unordered_map&gt;
+                            
+                        struct KaloyanIvanov
+                        {
+                        private:
+                            static KaloyanIvanov myself;
+                            
+                        private/*(personal) traits*/:
+                            
+                            const std::string name;
+                            const int age;
+                            const std::string placeOfBirth;
+                            
+                            std::vector&lt;std::string&gt; personalQualities;
+                            
+                            std::vector&lt;std::string&gt; hobbies;
+                            
+                        public/*(professional) traits - for more details, check out <a href="/assets/pdfs/CV.pdf" target="_blank">My Resume</a>*/:
+                            
+                            std::unordered_map&lt;std::string, std::vector&lt;std::string&gt;&gt; softwareSkills;
+                            
+                            std::vector&lt;std::string&gt; background;
+                        
+                            std::unordered_map&lt;std::string, std::vector&lt;std::string&gt;&gt; currentCMGTProgress;
+                        
+                        private:
+                            KaloyanIvanov()
+                                : name( "Kaloyan Ivanov" ), age( 20 ), placeOfBirth( "Varna, Bulgaria" ),
+                                personalQualities( { "motivated", "fun", "creative", "disciplined", "determined" } ),
+                                hobbies( { "Playing Music", "Watching Formula 1", "Playing Sports", "Cooking" } ),
+                                softwareSkills( { {"Game Development:", {"C# - Unity, GxPEngine (custom engine from the teachers)", "C++ - SFML", "Java - Processing", }},
+                                    {"Web:", {"HTML, CSS (SASS), JavaScript (jQuery)", "ASP.NET Core MVC, T-SQL, Microsoft SQL Server"}},
+                                    {"Other:", {"Elixir, Erlang"}} } ),
+                                background( { "My journey in programming and mathematics began early on in my life, eventually leading me to attend the High School of Mathematics in Varna.",
+                                    "With my growing interest in the field of software engineering, I decided to enroll in a C# Web Development degree in an online academy by the name of SoftUni.",
+                                    "",
+                                    "Video games have long been a deer hobby of mine, and having graduated both from high school and the C# Web development degree,",
+                                    "I made the decision to combine my two passions and to delve into game development by enrolling in CMGT at Saxion." } ),
+                                currentCMGTProgress( { {"Group Projects:", {
+                                    "Throughout the year, I had the chance to participate in several group projects, collaborating with amazing people to create a unique game in two to three weeks.",
+                                    "Given the short time period, we faced some adversities, however, by maintaining a good working environment and always communicating, we were able to overcome them and achieve our goals."
+                                    }}, {"First year:", {
+                                    "In my first year at Saxion, I learned how to apply my C# knowledge to gameplay, physics and algorithms programming by utilizing a custom-made 2D game engine.",
+                                    "Attending these courses, I have now established strong foundations on which I can confidently build upon in the future.",
+                                    "",
+                                    "Additionally, at the end of the year, I had the chance to delve deeper into the Unity game engine, creating my first ever fully functional 3D game.",
+                                    "It was then, when for the first time, I had to manage a project of bigger scale. As a consequence, I had to apply various techniques to keep my project healthy and maintainable.",
+                                    "I learned valuable lessons regarding software architecture, but this experience also got me excited to explore more concepts that would facilitate the development process in the future.",
+                                    "",
+                                    "Beyond programming, I engaged in supplementary courses covering Game and UI/UX design, as well as professional skills like Communication and Research."
+                                    }} } )
+                            {
+                            }
+                        
+                        public:
+                            static const KaloyanIvanov&amp; getMyself()
+                            {
+                                return myself;
+                            }
+                        
+                            friend std::ostream&amp; operator&lt;&lt;( std::ostream&amp; os, const KaloyanIvanov&amp; myself )
+                            {
+                                // Personal traits
+                        		os &lt;&lt; "Hey there! :&#41;\n\n";
+
+                        		os &lt;&lt; "My name is " &lt;&lt; myself.name &lt;&lt; ",\n";
+                        		os &lt;&lt; "I am " &lt;&lt; myself.age &lt;&lt; " years old,\n";
+                        		os &lt;&lt; "And I am from " &lt;&lt; myself.placeOfBirth &lt;&lt; ".\n\n";
+
+                        		os &lt;&lt; "I see myself as a ";
+                        		for ( unsigned short i = 0; i &lt; myself.personalQualities.size(); i++ )
+                        		{
+                        			os &lt;&lt; myself.personalQualities[ i ];
+                        			if ( i &lt;= myself.personalQualities.size() - 2 )
+                        				os &lt;&lt; ( i &lt; myself.personalQualities.size() - 2 ? ", " : " and " );
+                        		}
+                        		os &lt;&lt; " person.\n\n";
+                            
+                        		os &lt;&lt; "In my spare time, I keep myself busy with activities like:\n\n";
+                        		for ( unsigned short i = 0; i &lt; myself.hobbies.size(); i++ )
+                        		{
+                        			os &lt;&lt; "\t" &lt;&lt; myself.hobbies[ i ] &lt;&lt; "\n";
+                        		}
+                        		os &lt;&lt; "\n\n";
+                            
+                            
+                        		// Professional traits
+                        		os &lt;&lt; "My software skills and experience revolve around:\n\n";
+                        		for ( auto&amp; element : myself.softwareSkills )
+                        		{
+                        			os &lt;&lt; "\t" &lt;&lt; element.first &lt;&lt; "\n";
+                        			for ( unsigned short i = 0; i &lt; element.second.size(); i++ )
+                        			{
+                        				os &lt;&lt; "\t\t" &lt;&lt; element.second[ i ] &lt;&lt; "\n";
+                        			}
+                        		}
+                        		os &lt;&lt; "\n";
+                            
+                        		os &lt;&lt; "Background:\n\n";
+                            
+                        		for ( unsigned short i = 0; i &lt; myself.background.size(); i++ )
+                        		{
+                        			os &lt;&lt; "\t" &lt;&lt; myself.background[ i ] &lt;&lt; "\n";
+                        		}
+                        		os &lt;&lt; "\n";
+                            
+                        		os &lt;&lt; "Progress so far:\n\n";
+                        		for ( auto&amp; element : myself.currentCMGTProgress )
+                        		{
+                        			os &lt;&lt; "\t" &lt;&lt; element.first &lt;&lt; "\n";
+                        			for ( unsigned short i = 0; i &lt; element.second.size(); i++ )
+                        			{
+                        				os &lt;&lt; "\t\t" &lt;&lt; element.second[ i ] &lt;&lt; "\n";
+                        			}
+                        			os &lt;&lt; "\n";
+                        		}
+                            
+                        		return os;
+                            }
+                        
+                            KaloyanIvanov( const KaloyanIvanov&amp; ) = delete;
+                            KaloyanIvanov&amp; operator=( const KaloyanIvanov&amp; ) = delete;
+                        };
+                        
+                        KaloyanIvanov KaloyanIvanov::myself;
+                        
+                        int main()
+                        {
+                            std::cout &lt;&lt; KaloyanIvanov::getMyself() &lt;&lt; std::endl;
+                        }
+                    </code>
+                </pre>
+            </div>
+            <div id="output-outer-cont">
+                <img id="image-me-about" src="/assets/images/ProfilePicture3.jpg" alt="Picture of myself"
+                    data-width="20%">
+                <div id="output-inner-cont">
+                    <p>Output:</p>
+                    <div id="output" style="z-index: 1;">
+                        <pre class="style-2">
+                        <code class="language-plain">
+                            Hey there! :&#41;
+    
+                            My name is <mark>Kaloyan Ivanov</mark>,
+                            I am <mark>20</mark> years old,
+                            And I am from <mark>Varna, Bulgaria</mark>.
+                            
+                            I see myself as a <mark>motivated</mark>, <mark>fun</mark>, <mark>creative</mark>, <mark>disciplined</mark> and <mark>determined</mark> person.
+    
+                            In my <mark>spare time</mark>, I keep myself busy with <mark>activities</mark> like:
+    
+                                    <span class="show-on-hover">Playing Music <i class="fa-solid fa-music" style="color: #edae49;"></i> <i class="fa-solid fa-guitar" style="color: #edae49;"></i>
+                                    </span>
+                                    <span class="show-on-hover">Watching Formula 1 <i class="fa-solid fa-flag-checkered" style="color: #edae49;"></i>
+                                    </span>
+                                    <span class="show-on-hover">Playing Sports <i class="fa-solid fa-dumbbell" style="color: #edae49;"></i> <i class="fa-solid fa-person-swimming" style="color: #edae49;"></i> <i class="fa-solid fa-table-tennis-paddle-ball" style="color: #edae49;"></i>
+                                    </span>
+                                    <span class="show-on-hover">Cooking <i class="fa-solid fa-utensils" style="color: #edae49;"></i>
+                                    </span>
+    
+    
+                            My <mark>software skills</mark> and <mark>experience</mark> revolve around:
+    
+                                    <mark>Game Development</mark>:
+                                            <span class="show-on-hover">C# - Unity, GxPEngine (custom engine from the teachers) <i class="fa-solid fa-hashtag" style="color: #edae49;"></i>
+                                            </span>
+                                            <span class="show-on-hover">C++ - SFML <i class="fa-solid fa-memory" style="color: #edae49;"></i>
+                                            </span>
+                                            <span class="show-on-hover">Java - Processing <i class="fa-solid fa-mug-hot" style="color: #edae49;"></i>
+                                            </span>
+                                    <mark>Web</mark>:
+                                            <span class="show-on-hover">HTML, CSS (SASS), JavaScript (jQuery) <i class="fa-solid fa-display" style="color: #edae49;"></i>
+                                            </span>
+                                            <span class="show-on-hover">ASP.NET Core MVC, T-SQL, Microsoft SQL Server <i class="fa-solid fa-database" style="color: #edae49;"></i>
+                                            </span>
+                                    <mark>Other</mark>:
+                                            <span class="show-on-hover">Elixir, Erlang <i class="fa-solid fa-droplet" style="color: #edae49;"></i>
+                                            </span>
+    
+                            <mark>Background</mark>: (for more details, check out <a href="/assets/pdfs/CV.pdf" target="_blank">My Resume</a>)
+
+                                    <span class="show-on-hover">My journey in programming and mathematics began early on in my life, eventually leading me to attend the High School of Mathematics in Varna. <i class="fa-solid fa-square-root-variable" style="color: #edae49;"></i>
+                                    </span>
+                                    <span class="show-on-hover">With my growing interest in the field of software engineering, I decided to enroll in a C# Web Development degree in an online academy by the name of SoftUni. <i class="fa-solid fa-code" style="color: #edae49;"></i>
+                                    </span>
+
+                                    Video games have long been a deer hobby of mine, and having graduated both from high school and the C# Web development degree,
+                                    <span class="show-on-hover">I made the decision to combine my two passions and to delve into game development by enrolling in CMGT at Saxion. <i class="fa-solid fa-gamepad" style="color: #edae49;"></i>
+                                    </span>
+    
+                            <mark>Progress</mark> so far:
+    
+                                    First year:
+                                            In my first year at Saxion, I learned how to apply my C# knowledge to <mark>gameplay</mark>, <mark>physics</mark> and <mark>algorithms</mark> programming by utilizing a custom-made 2D game engine.
+                                            Attending these courses, I have now established <mark>strong foundations</mark> on which I can confidently build upon in the future.
+    
+                                            Additionally, at the end of the year, I had the chance to delve deeper into the Unity game engine, creating my first ever <mark>fully functional 3D game</mark>.
+                                            It was then, when for the first time, I had to manage a project of bigger scale. As a consequence, I had to apply various techniques to keep my project <mark>healthy</mark> and <mark>maintainable</mark>.
+                                            I learned valuable lessons regarding <mark>software architecture</mark>, but this experience also got me excited to explore more concepts that would facilitate the development process in the future.
+    
+                                            Beyond programming, I engaged in supplementary courses covering <mark>Game</mark> and <mark>UI/UX design</mark>, as well as professional skills like <mark>Communication</mark> and <mark>Research</mark>.
+    
+                                    Group Projects:
+                                            Throughout the year, I had the chance to participate in several group projects, collaborating with amazing people to create a <mark>unique game</mark> in two to three weeks.
+                                            Given the short time period, we faced some adversities, however, by maintaining a <mark>good working environment</mark> and <mark>always communicating</mark>, we were able to overcome them and achieve our goals.
+                        </code>
+                    </pre>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <aside class="progress">
+            <div class="progress-bar-container">
+                <div class="progress-bar">
+                </div>
+            </div>
+        </aside>
+        <footer class="footer">
+            <div class="footer-cont">
+                <div class="blur-background"></div>
+                <section class="contact-cont">
+                    <div class="personal-info">
+                        <h6>Kaloyan Ivanov</h6>
+                        <hr>
+                        <p>Gameplay and Graphics programming<br>student</p>
+                    </div>
+                    <a href="/assets/pdfs/CV.pdf" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="44" width="44"
+                            viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <path fill="#ffffff"
+                                d="M0 64C0 28.7 28.7 0 64 0L224 0l0 128c0 17.7 14.3 32 32 32l128 0 0 144-208 0c-35.3 0-64 28.7-64 64l0 144-48 0c-35.3 0-64-28.7-64-64L0 64zm384 64l-128 0L256 0 384 128zM176 352l32 0c30.9 0 56 25.1 56 56s-25.1 56-56 56l-16 0 0 32c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-48 0-80c0-8.8 7.2-16 16-16zm32 80c13.3 0 24-10.7 24-24s-10.7-24-24-24l-16 0 0 48 16 0zm96-80l32 0c26.5 0 48 21.5 48 48l0 64c0 26.5-21.5 48-48 48l-32 0c-8.8 0-16-7.2-16-16l0-128c0-8.8 7.2-16 16-16zm32 128c8.8 0 16-7.2 16-16l0-64c0-8.8-7.2-16-16-16l-16 0 0 96 16 0zm80-112c0-8.8 7.2-16 16-16l48 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-32 0 0 32 32 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-32 0 0 48c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-64 0-64z" />
+                        </svg>
+                    </a>
+                    <hr>
+                    <div class="icons-cont">
+                        <a href="https://www.linkedin.com/in/kaloyan-ivanov-ge/" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"
+                                viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                <path fill="#ffffff"
+                                    d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z" />
+                            </svg>
+                        </a>
+                        <a href="https://github.com/zntKI" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"
+                                viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                <path fill="#ffffff"
+                                    d="M448 96c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96zM265.8 407.7c0-1.8 0-6 .1-11.6c.1-11.4 .1-28.8 .1-43.7c0-15.6-5.2-25.5-11.3-30.7c37-4.1 76-9.2 76-73.1c0-18.2-6.5-27.3-17.1-39c1.7-4.3 7.4-22-1.7-45c-13.9-4.3-45.7 17.9-45.7 17.9c-13.2-3.7-27.5-5.6-41.6-5.6s-28.4 1.9-41.6 5.6c0 0-31.8-22.2-45.7-17.9c-9.1 22.9-3.5 40.6-1.7 45c-10.6 11.7-15.6 20.8-15.6 39c0 63.6 37.3 69 74.3 73.1c-4.8 4.3-9.1 11.7-10.6 22.3c-9.5 4.3-33.8 11.7-48.3-13.9c-9.1-15.8-25.5-17.1-25.5-17.1c-16.2-.2-1.1 10.2-1.1 10.2c10.8 5 18.4 24.2 18.4 24.2c9.7 29.7 56.1 19.7 56.1 19.7c0 9 .1 21.7 .1 30.6c0 4.8 .1 8.6 .1 10c0 4.3-3 9.5-11.5 8C106 393.6 59.8 330.8 59.8 257.4c0-91.8 70.2-161.5 162-161.5s166.2 69.7 166.2 161.5c.1 73.4-44.7 136.3-110.7 158.3c-8.4 1.5-11.5-3.7-11.5-8zm-90.5-54.8c-.2-1.5 1.1-2.8 3-3.2c1.9-.2 3.7 .6 3.9 1.9c.3 1.3-1 2.6-3 3c-1.9 .4-3.7-.4-3.9-1.7zm-9.1 3.2c-2.2 .2-3.7-.9-3.7-2.4c0-1.3 1.5-2.4 3.5-2.4c1.9-.2 3.7 .9 3.7 2.4c0 1.3-1.5 2.4-3.5 2.4zm-14.3-2.2c-1.9-.4-3.2-1.9-2.8-3.2s2.4-1.9 4.1-1.5c2 .6 3.3 2.1 2.8 3.4c-.4 1.3-2.4 1.9-4.1 1.3zm-12.5-7.3c-1.5-1.3-1.9-3.2-.9-4.1c.9-1.1 2.8-.9 4.3 .6c1.3 1.3 1.8 3.3 .9 4.1c-.9 1.1-2.8 .9-4.3-.6zm-8.5-10c-1.1-1.5-1.1-3.2 0-3.9c1.1-.9 2.8-.2 3.7 1.3c1.1 1.5 1.1 3.3 0 4.1c-.9 .6-2.6 0-3.7-1.5zm-6.3-8.8c-1.1-1.3-1.3-2.8-.4-3.5c.9-.9 2.4-.4 3.5 .6c1.1 1.3 1.3 2.8 .4 3.5c-.9 .9-2.4 .4-3.5-.6zm-6-6.4c-1.3-.6-1.9-1.7-1.5-2.6c.4-.6 1.5-.9 2.8-.4c1.3 .7 1.9 1.8 1.5 2.6c-.4 .9-1.7 1.1-2.8 .4z" />
+                            </svg>
+                        </a>
+                    </div>
+                </section>
+                <section class="nav-next-page">
+                    <h5>Intrested?</h5>
+                    <p><a href="/source/html/contact.html">Let's get in Contact</a>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1"
+                            stroke="#EDAE49">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                        </svg>
+                    </p>
+                </section>
+            </div>
+        </footer>
+    </div>
+
+    <script src="/assets/prismjs/prism.js"></script>
+    <script>
+        Prism.languages.insertBefore('cpp', 'class-name', {
+            'stl-container': {
+                pattern: /\bstd::(?:vector|map|string|set|unordered_map|deque|list|array|queue|stack)\b/,
+                alias: 'class-name'
+            }
+        });
+    </script>
+
+    <script src="/source/js/about_page.js"></script>
+
+    <script src="/source/js/general/mouse.js"></script>
+    <script src="/source/js/general/nav_menu.js"></script>
+    <script src="/source/js/general/scroll_bar.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,251 @@
+@import "../pages/landing"; // Inherits css for common elements from landing
+
+#contact-contact {
+
+    @include flex-width-height($width: 25%, $height: 60%);
+
+    @include flex-display($flex-dir: column, $justify-content: space-around);
+
+    #contact-cont-contact {
+        height: 45%;
+
+        @include flex-display($flex-dir: column, $justify-content: space-between);
+
+        h4 {
+            // height: 30%;
+
+            color: $secondary-text-color;
+            text-align: left;
+        }
+
+        #contact-el-contact {
+
+            @include flex-display($flex-dir: column, $justify-content: space-between, $align-items: center);
+
+            height: 55%;
+
+            &>* {
+                width: 80%;
+            }
+
+            #mail-cont-contact {
+
+                @include flex-display($flex-dir: row, $justify-content: space-between, $align-items: center);
+
+                gap: 5%;
+
+                #mails-contact {
+
+                    @include flex-display($flex-dir: column, $justify-content: center, $align-items: flex-start);
+
+                }
+
+            }
+
+            #icons-cont-contact {
+
+                @include flex-display($flex-dir: row, $justify-content: center, $align-items: center);
+
+                gap: 5%;
+
+                svg:hover {
+                    path {
+                        fill: $secondary-text-color;
+                    }
+                }
+
+            }
+
+        }
+
+    }
+
+    hr {
+        align-self: center;
+
+        width: 80%;
+    }
+
+    #nav-landing {
+
+        width: 100%;
+        height: 25%;
+
+        justify-self: flex-end;
+
+        div {
+            h5 {
+                font-weight: 600;
+
+                a {
+                    text-decoration: none;
+                    color: inherit;
+                }
+            }
+        }
+    }
+
+}
+
+// TODO:
+
+// laptop and desktop res:
+//      make the content centered so that when it gets bigger and bigger,
+//      all the content stays at the center and does not span to the edges
+//      Do that by calculating the ideal distance in the current res (1920)
+//      and then distibuting it equally to each element while also making them flex centered
+
+// mobile
+@media (max-width: 480px) {
+
+    //  On top - Photo shown
+    //  Below - HeaderInfoContLanding
+    //  At the bottom - NavLanding
+
+    // Only #contact-contact because mediaquery inherited from landing scss file
+
+    #header-landing {
+        height: 50%;
+    }
+
+    #contact-contact {
+
+        width: fit-content;
+        height: 40%;
+
+        #contact-cont-contact {
+            height: 45%;
+
+            h4 {
+                text-align: center;
+            }
+
+            #contact-el-contact {
+
+                height: 65%;
+
+                &>* {
+                    width: fit-content;
+                }
+
+                #mail-cont-contact {
+
+                    svg {
+                        width: 40px;
+                        height: 40px;
+                    }
+
+                }
+
+                #icons-cont-contact {
+
+                    svg {
+                        width: 54px;
+                        height: 54px;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+    // #nav-landing {
+
+    //     // border: 1px solid yellow;
+
+    //     @include flex-width-height($height: 25%);
+
+    //     @include flex-display($flex-dir: column, $justify-content: space-between, $align-items: center);
+
+    //     div {
+
+    //         @include flex-display($flex-dir: column, $justify-content: space-between, $align-items: center);
+    //         height: 20%;
+
+    //         hr {
+    //             display: inline;
+    //             border-color: $secondary-text-color;
+    //             width: 100%;
+
+    //             border-width: 1.5px;
+    //         }
+
+    //         svg {
+    //             display: none;
+    //             animation: none;
+    //         }
+
+    //     }
+
+    // }
+}
+
+// tablets
+@media (min-width: 481px) and (max-width: 1280px) {
+
+    #contact-contact {
+
+        width: auto;
+        height: 40%;
+
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        gap: 10%;
+
+        #contact-cont-contact {
+            height: 45%;
+
+            h4 {
+                text-align: center;
+            }
+
+            #contact-el-contact {
+
+                height: 65%;
+
+                &>* {
+                    width: fit-content;
+                }
+
+                #mail-cont-contact {
+
+                    svg {
+                        width: 44px;
+                        height: 44px;
+                    }
+
+                }
+
+                #icons-cont-contact {
+
+                    svg {
+                        width: 58px;
+                        height: 58px;
+                    }
+
+                }
+
+            }
+
+        }
+
+        hr {
+            height: 40%;
+        }
+
+        #nav-landing {
+
+            h5 {
+                text-wrap: nowrap;
+            }
+
+        }
+
+    }
+
+}

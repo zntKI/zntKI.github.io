@@ -1,0 +1,64 @@
+@import "../base";
+
+@import "../components/particles";
+@import "../components/spotlight";
+@import "../components/blurred_bg";
+
+@import "../components/header";
+@import "../components/skeleton";
+
+// TODO:
+// Fix resizing issue with the second code block - make it get smaller in width when window resized
+
+.content {
+    main {
+
+        width: 98%;
+
+        @include flex-display($flex-dir: column, $justify-content: flex-start, $align-items: center);
+
+        #output-outer-cont {
+
+            width: fit-content;
+            margin-top: 100px;
+
+            @include flex-display($flex-dir: row, $justify-content: center, $align-items: center);
+
+            img {
+                // position: absolute;
+                align-self: center;
+
+                // border: 1px solid red;
+
+                border-radius: 50%;
+                width: 0%;
+                height: auto;
+
+                box-shadow: 0 0 20px 1px black;
+
+                margin-right: 50px;
+            }
+
+            #output-inner-cont {
+
+                width: 60%;
+
+                @include flex-display($flex-dir: column, $justify-content: flex-start, $align-items: flex-start);
+
+                p {
+                    font-family: $secondary-font;
+                    font-weight: 800;
+
+                    color: $main-text-color;
+                }
+
+                #output {
+                    width: 100%;
+                }
+
+            }
+
+        }
+
+    }
+}

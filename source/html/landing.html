@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html id="html-landing" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/source/css/landing.css" />
+    <link rel="stylesheet" href="/assets/fontawesome/css/all.min.css" />
+    <script src="/assets/js/jquery-3.7.1.min.js"></script>
+    <script src="/assets/js/particles.js"></script>
+    <title>Kaloyan Ivanov</title>
+</head>
+
+<body id="body-landing">
+    <div id="particles-js"></div>
+    <div id="spotlight"></div>
+    <header id="header-landing">
+        <img id="image-me-landing" src="/assets/images/ProfilePicture2.jpg" alt="Picture of myself" data-width="300">
+        <div id="header-info-cont-landing">
+            <h1>Kaloyan Ivanov</h1>
+            <hr>
+            <h6>Gameplay and Graphics programming student</h6>
+            <p>Passionate about writing efficient and reusable code.</p>
+        </div>
+    </header>
+    <nav id="nav-landing">
+        <div class="nav-el-cont-landing">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="#EDAE49">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+            </svg>
+            <h4><a href="/source/html/projects.html">Projects</a>
+            </h4>
+            <hr>
+        </div>
+        <div class="nav-el-cont-landing">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="#EDAE49">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+            </svg>
+            <h4><a href="/source/html/about.html">About Me</a>
+            </h4>
+            <hr>
+        </div>
+        <div class="nav-el-cont-landing">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="#EDAE49">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+            </svg>
+            <h4><a href="/source/html/contact.html">Contact Me</a>
+            </h4>
+            <hr>
+        </div>
+    </nav>
+
+    <script src="/source/js/landing_page.js"></script>
+
+    <script src="/source/js/general/mouse.js"></script>
+    <script>
+        particlesJS.load('particles-js', '/assets/json/particles.json', function () {
+            console.log('particles.js loaded - callback');
+        });
+    </script>
+</body>
+
+</html>

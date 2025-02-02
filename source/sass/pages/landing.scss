@@ -1,0 +1,319 @@
+@import "../base";
+
+@import "../components/particles";
+@import "../components/spotlight";
+
+#html-landing,
+#body-landing {
+    height: 100%;
+}
+
+#body-landing {
+    @include flex-display($justify-content: space-around, $align-items: center);
+}
+
+#particles-js {
+    background: linear-gradient($bg-color, rgb(37, 37, 37));
+
+    filter: brightness(80%) contrast(100%) hue-rotate(-15deg);
+}
+
+#header-landing {
+
+    // border: 1px solid green;
+
+    position: relative;
+
+    // @include flex-width-height($width: 50%, $height: 60%);
+    height: 60%;
+    width: min-content;
+
+    @include flex-display($flex-dir: row, $justify-content: flex-start);
+
+    img {
+        // position: absolute;
+        align-self: center;
+
+        // border: 1px solid red;
+
+        border-radius: 50%;
+        width: 0%;
+        height: auto;
+
+        box-shadow: 0 0 20px 1px black;
+
+        margin-right: 30px;
+    }
+
+    #header-info-cont-landing {
+
+        // border: 1px solid yellow;
+        @include flex-display($flex-dir: column, $justify-content: center);
+
+        h1 {
+            // font-size: clamp(36px, 5.83vw, 112px);
+
+            @include flex-width-height($width: 90%, $height: 25%);
+
+            text-wrap: nowrap;
+        }
+
+        hr {
+            width: 80%;
+        }
+
+        h6 {
+            // font-size: clamp(19px, 1.66vw, 32px);
+            font-family: $secondary-font;
+            font-weight: 500;
+            color: $secondary-text-color;
+
+            @include flex-width-height($height: 20%);
+
+            @include flex-display($align-items: center);
+        }
+
+        p {
+            // font-size: clamp(15px, 1.25vw, 24px);
+            @include flex-width-height($height: 10%);
+        }
+    }
+}
+
+#nav-landing {
+
+    // border: 1px solid yellow;
+
+    @include flex-width-height($width: 25%, $height: 30%);
+
+    @include flex-display($flex-dir: column, $justify-content: space-between, $align-items: flex-end);
+
+    div {
+
+        position: relative;
+
+        @include flex-display($flex-dir: column, $align-items: flex-end);
+
+        h4 {
+            // font-size: clamp(30px, 3.33vw, 64px);
+            font-weight: 600;
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+
+        hr {
+            display: none;
+            width: 0%;
+
+            border-width: 2px;
+        }
+
+        svg {
+            display: none;
+
+            width: 80px;
+            height: 80px;
+
+            position: absolute;
+            transform-origin: right center;
+            transform: translateY(-50%);
+            left: -100px;
+            top: 50%;
+
+            animation: move-arroww 1.5s infinite ease-in-out;
+
+            @keyframes move-arroww {
+                0% {
+                    left: -100px;
+                }
+
+                50% {
+                    left: -120px;
+                }
+
+                100% {
+                    left: -100px;
+                }
+            }
+        }
+
+    }
+
+}
+
+// TODO:
+
+// laptop and desktop res:
+//      make the content centered so that when it gets bigger and bigger,
+//      all the content stays at the center and does not span to the edges
+//      Do that by calculating the ideal distance in the current res (1920)
+//      and then distibuting it equally to each element while also making them flex centered
+
+// mobile
+@media (max-width: 480px) {
+
+    //  On top - Photo shown
+    //  Below - HeaderInfoContLanding
+    //  At the bottom - NavLanding
+
+    #body-landing {
+        @include flex-display($flex-dir: column, $justify-content: center, $align-items: center);
+    }
+
+    #spotlight {
+        display: none;
+    }
+
+    #header-landing {
+        @include flex-display($flex-dir: column, $justify-content: center);
+        // border: 1px solid yellow;
+
+        img {
+            align-self: center;
+
+            border-radius: 10%;
+            width: 50%;
+
+            margin: 0px;
+        }
+
+        #header-info-cont-landing {
+
+            // border: 1px solid yellow;
+            @include flex-display($flex-dir: column, $justify-content: center, $align-items: center);
+            height: 60%;
+
+            h1 {
+                @include flex-width-height($height: 20%);
+            }
+
+            hr {
+                width: 80%;
+            }
+
+            h6 {
+                @include flex-width-height($height: 30%);
+                text-align: center;
+            }
+
+            p {
+                @include flex-width-height($height: 15%);
+                text-align: center;
+            }
+        }
+    }
+
+    #nav-landing {
+
+        // border: 1px solid yellow;
+
+        @include flex-width-height($height: 25%);
+
+        @include flex-display($flex-dir: column, $justify-content: space-between, $align-items: center);
+
+        div {
+
+            @include flex-display($flex-dir: column, $justify-content: space-between, $align-items: center);
+            height: 20%;
+
+            hr {
+                display: inline;
+                border-color: $secondary-text-color;
+                width: 100%;
+
+                border-width: 1.5px;
+            }
+
+            svg {
+                display: none;
+                animation: none;
+            }
+
+        }
+
+    }
+
+}
+
+// tablets
+@media (min-width: 481px) and (max-width: 1280px) {
+
+    #body-landing {
+        @include flex-display($flex-dir: column, $justify-content: center, $align-items: center);
+        gap: 20%;
+    }
+
+    #spotlight {
+        display: none;
+    }
+
+    #header-landing {
+        @include flex-display($flex-dir: row, $justify-content: center, $align-items: center);
+        width: fit-content;
+        height: fit-content;
+        flex-wrap: wrap;
+
+        gap: 5%;
+        // border: 1px solid yellow;
+
+        img {
+            border-radius: 10%;
+            width: 20%;
+
+            margin: 0px;
+        }
+
+        #header-info-cont-landing {
+            // border: 1px solid yellow;
+            @include flex-display($flex-dir: column, $justify-content: center, $align-items: flex-start);
+            height: 100%;
+            width: fit-content;
+
+            h1 {
+                @include flex-width-height($height: 40%);
+            }
+
+            h6 {
+                @include flex-width-height($height: 35%);
+            }
+
+            p {
+                @include flex-width-height($height: 15%);
+            }
+        }
+    }
+
+    #nav-landing {
+
+        // border: 1px solid yellow;
+
+        @include flex-width-height($height: 25%);
+
+        @include flex-display($flex-dir: column, $justify-content: space-between, $align-items: center);
+
+        div {
+
+            @include flex-display($flex-dir: column, $justify-content: space-between, $align-items: center);
+            height: 20%;
+
+            hr {
+                display: inline;
+                border-color: $secondary-text-color;
+                width: 100%;
+
+                border-width: 1.5px;
+            }
+
+            svg {
+                display: none;
+                animation: none;
+            }
+
+        }
+
+    }
+
+}

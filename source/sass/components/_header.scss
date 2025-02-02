@@ -1,0 +1,56 @@
+.header {
+
+    height: 30vh;
+    margin-bottom: 5vh;
+
+    @include flex-display($flex-dir: column, $justify-content: center, $align-items: center);
+
+    font-family: $secondary-font;
+
+    .title-cont {
+
+        position: relative;
+
+        @include flex-width-height($width: 50%, $height: 30%);
+
+        @include flex-display($flex-dir: row, $justify-content: space-around, $align-items: center);
+
+        div {
+            height: 100%;
+
+            @include flex-display($flex-dir: column, $justify-content: center, $align-items: center);
+        }
+
+        h6,
+        h4 {
+            position: relative;
+        }
+
+        .possible-title-cont {
+            justify-content: flex-end;
+
+            h6 {
+                a {
+                    text-decoration: none;
+                    color: inherit;
+                }
+            }
+
+            hr {
+                position: relative;
+
+                border-color: $secondary-text-color;
+
+                display: none;
+            }
+        }
+
+        h4 {
+            color: $secondary-text-color;
+
+            text-align: center;
+        }
+
+    }
+
+}

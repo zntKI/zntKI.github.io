@@ -1,0 +1,272 @@
+@import "../base";
+
+@import "../components/particles";
+@import "../components/spotlight";
+@import "../components/blurred_bg";
+
+@import "../components/header";
+@import "../components/skeleton";
+
+.content {
+
+    #nav-projects {
+
+        position: sticky;
+        top: 10px;
+
+    }
+
+    // #nav-projects {
+
+    //     width: 10%;
+
+    //     @include flex-display($flex-dir: column, $align-items: flex-start);
+
+    //     gap: 10px;
+
+    //     #fast-travel-cont-projects {
+
+    //         margin-left: 20px;
+
+    //         @include flex-display($flex-dir: column, $align-items: flex-start);
+
+    //         gap: 15px;
+
+    //         h6 {
+    //             position: relative;
+    //         }
+
+    //         .nav-el-cont-projects {
+
+    //             position: relative;
+
+    //             p {
+    //                 width: 100%;
+    //                 position: relative;
+
+    //                 margin-bottom: 2px;
+
+    //                 a {
+    //                     text-decoration: none;
+    //                     color: inherit;
+    //                 }
+    //             }
+
+    //             hr {
+    //                 width: 40%;
+    //                 position: relative;
+    //             }
+
+    //             svg {
+    //                 display: none;
+
+    //                 width: 40px;
+    //                 height: 40px;
+
+    //                 position: absolute;
+    //                 transform-origin: left center;
+    //                 transform: translateY(-50%);
+    //                 right: -60px;
+    //                 top: 50%;
+
+    //                 animation: move-arrow 1.5s infinite ease-in-out;
+    //             }
+
+    //         }
+
+    //     }
+
+    // }
+
+    #main-projects-grid {
+
+        position: relative;
+
+        width: 48%;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 49%);
+        grid-template-rows: repeat(32, 5vh); // TODO: Make mediaquery for mobile that has only one item on a row (not two), increases the width and the height of the item
+        // height: calc(25 * 5vh + 24 * 1%);
+
+        row-gap: 1%;
+        column-gap: 2%;
+
+        justify-content: center;
+
+        .item-bg-projects {
+            border-radius: 10px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+
+            z-index: 2;
+
+            position: relative;
+
+        }
+
+        .item-bg-projects.left-item-projects {
+            box-shadow: -20px 10px 50px black;
+        }
+
+        .item-bg-projects.right-item-projects {
+            box-shadow: 20px 10px 50px black;
+        }
+
+        .item-descr-projects {
+            z-index: 1;
+
+            position: relative;
+
+            width: 90%;
+            justify-self: center;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            h6 {
+                color: $secondary-text-color;
+
+                width: 100%;
+
+                flex-grow: 1;
+            }
+
+            p.p-descr-bigger {
+                width: 100%;
+
+                flex-grow: 1;
+            }
+
+            .p-descr-section {
+                width: 100%;
+                flex-grow: 2;
+
+                @include flex-display($justify-content: space-around);
+
+                div {
+                    @include flex-display($flex-dir: column, $justify-content: center, $align-items: center);
+                }
+
+                div:first-child {
+                    // Title
+                    @include flex-width-height($width: 30%);
+
+                    text-align: center;
+                }
+
+                div:last-child {
+                    // Descr
+                    @include flex-width-height($width: 60%);
+
+                    text-align: center;
+                }
+            }
+
+            p.p-descr-smaller {
+                font-size: $default-font-size;
+            }
+
+            hr {
+                width: 100%;
+            }
+        }
+
+        .left-item-projects {
+
+            h6,
+            p.p-descr-bigger {
+                text-align: right;
+            }
+        }
+
+        .right-item-projects {
+
+            h6,
+            p.p-descr-bigger {
+                text-align: left;
+            }
+        }
+
+        #item-1-bg-projects,
+        #item-1-descr-projects {
+            grid-area: 1 / 1 / 6 / 2;
+        }
+
+        #item-1-bg-projects {
+            background-image: url("/assets/images/projectx_thumbnail.png");
+        }
+
+        #item-2-bg-projects,
+        #item-2-descr-projects {
+            grid-area: 1 / 2 / 6 / 3;
+        }
+
+        #item-2-bg-projects {
+            background-image: url("/assets/images/battle_game_thumbnail.jpg");
+        }
+
+        #item-3-bg-projects,
+        #item-3-descr-projects {
+            grid-area: 6 / 1 / 11 / 2;
+        }
+
+        #item-3-bg-projects {
+            background-image: url("/assets/images/a_drive_home.jpg");
+        }
+
+        #item-4-bg-projects,
+        #item-4-descr-projects {
+            grid-area: 6 / 2 / 13 / 3;
+        }
+
+        #item-4-bg-projects {
+            background-image: url("/assets/images/algorithms_thumbnail.jpg");
+        }
+
+        #item-5-bg-projects,
+        #item-5-descr-projects {
+            grid-area: 11 / 1 / 18 / 2;
+        }
+
+        #item-5-bg-projects {
+            background-image: url("/assets/images/celeste_clone_thumbnail.jpg");
+        }
+
+        #item-6-bg-projects,
+        #item-6-descr-projects {
+            grid-area: 13 / 2 / 19 / 3;
+        }
+
+        #item-6-bg-projects {
+            background-image: url("/assets/images/pool_thumbnail.jpg");
+        }
+
+        #item-7-bg-projects,
+        #item-7-descr-projects {
+            grid-area: 18 / 1 / 24 / 2;
+        }
+
+        #item-7-bg-projects {
+            background-image: url("/assets/images/tobitai_thumbnail.jpg");
+        }
+
+        #item-8-bg-projects,
+        #item-8-descr-projects {
+            grid-area: 19 / 2 / 25 / 3;
+        }
+
+        #item-8-bg-projects {
+            background-image: url("/assets/images/dj_rush_thumbnail.jpg");
+        }
+
+    }
+}
+
+// mobile
+@media (max-width: 480px) {}
+
+// tablets
+@media (min-width: 481px) and (max-width: 1280px) {}
