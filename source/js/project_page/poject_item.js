@@ -5,22 +5,27 @@ $(document).ready(function () {
         $(this).data('originalHeight', $(this).height());
         $(this).data('originalBg', $(this).css('background-image'));
         $(this).data('originalBoxShadow', $(this).css('box-shadow'));
+
+        $(this).data("href", $(this).attr("href")).removeAttr("href");
     });
 
     const $gridContainer = $('#main-projects-grid');
 
-    let $previousItemSelected;
+    let $currentOpenItem = null;
 
-    $('.item-bg-projects').mouseenter(
+    // TODO: Fix weird interactions
+
+    $('.item-bg-projects').mousedown(
         function () {
 
             const $this = $(this);
-            const width = $this.outerWidth();
 
-            if ($previousItemSelected != null) {
+            if ($currentOpenItem && $currentOpenItem.is($this)) {
                 return;
             }
-            $previousItemSelected = $this;
+            $currentOpenItem = $this;
+
+            const width = $this.outerWidth();
 
             const isLeft = $this.hasClass("left-item-projects")
             const offsetAmount = isLeft ? -width : width;
@@ -51,6 +56,10 @@ $(document).ready(function () {
                         adjustHeightToFitImage($this, newBgSrc);
 
                     }
+
+
+                    $(this).attr("href", $(this).data("href"));
+
                 });
 
             $this.siblings().each(function () {
@@ -64,6 +73,13 @@ $(document).ready(function () {
         function () {
 
             const $this = $(this);
+
+            if ($currentOpenItem && !$currentOpenItem.is($this)) {
+                return;
+            }
+            $currentOpenItem = null;
+
+            $(this).removeAttr("href");
 
             $this.stop(true).animate(
                 {

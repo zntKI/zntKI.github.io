@@ -312,6 +312,7 @@ h6 {
   background-size: cover;
   z-index: 2;
   position: relative;
+  cursor: pointer;
 }
 .content #main-projects-grid .item-bg-projects.left-item-projects {
   box-shadow: -20px 10px 50px black;

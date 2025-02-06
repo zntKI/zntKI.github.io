@@ -16,68 +16,6 @@
 
     }
 
-    // #nav-projects {
-
-    //     width: 10%;
-
-    //     @include flex-display($flex-dir: column, $align-items: flex-start);
-
-    //     gap: 10px;
-
-    //     #fast-travel-cont-projects {
-
-    //         margin-left: 20px;
-
-    //         @include flex-display($flex-dir: column, $align-items: flex-start);
-
-    //         gap: 15px;
-
-    //         h6 {
-    //             position: relative;
-    //         }
-
-    //         .nav-el-cont-projects {
-
-    //             position: relative;
-
-    //             p {
-    //                 width: 100%;
-    //                 position: relative;
-
-    //                 margin-bottom: 2px;
-
-    //                 a {
-    //                     text-decoration: none;
-    //                     color: inherit;
-    //                 }
-    //             }
-
-    //             hr {
-    //                 width: 40%;
-    //                 position: relative;
-    //             }
-
-    //             svg {
-    //                 display: none;
-
-    //                 width: 40px;
-    //                 height: 40px;
-
-    //                 position: absolute;
-    //                 transform-origin: left center;
-    //                 transform: translateY(-50%);
-    //                 right: -60px;
-    //                 top: 50%;
-
-    //                 animation: move-arrow 1.5s infinite ease-in-out;
-    //             }
-
-    //         }
-
-    //     }
-
-    // }
-
     #main-projects-grid {
 
         position: relative;
@@ -104,6 +42,7 @@
 
             position: relative;
 
+            cursor: pointer;
         }
 
         .item-bg-projects.left-item-projects {
