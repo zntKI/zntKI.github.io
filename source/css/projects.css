@@ -299,7 +299,7 @@ h6 {
   width: 48%;
   display: grid;
   grid-template-columns: repeat(auto-fit, 49%);
-  grid-template-rows: repeat(32, 5vh);
+  grid-template-rows: repeat(50, 5vh);
   row-gap: 1%;
   -moz-column-gap: 2%;
        column-gap: 2%;
@@ -376,59 +376,80 @@ h6 {
 .content #main-projects-grid .right-item-projects p.p-descr-bigger {
   text-align: left;
 }
-.content #main-projects-grid #item-1-bg-projects,
-.content #main-projects-grid #item-1-descr-projects {
+.content #main-projects-grid #item-11-bg-projects,
+.content #main-projects-grid #item-11-descr-projects {
   grid-area: 1/1/6/2;
 }
-.content #main-projects-grid #item-1-bg-projects {
-  background-image: url("/assets/images/projectx_thumbnail.png");
+.content #main-projects-grid #item-11-bg-projects {
+  background-image: url("/assets/images/opengl_thumbnail.jpg");
 }
-.content #main-projects-grid #item-2-bg-projects,
-.content #main-projects-grid #item-2-descr-projects {
+.content #main-projects-grid #item-10-bg-projects,
+.content #main-projects-grid #item-10-descr-projects {
   grid-area: 1/2/6/3;
 }
-.content #main-projects-grid #item-2-bg-projects {
-  background-image: url("/assets/images/battle_game_thumbnail.jpg");
+.content #main-projects-grid #item-10-bg-projects {
+  background-image: url("/assets/images/hell_fryer_thumbnail.jpg");
 }
-.content #main-projects-grid #item-3-bg-projects,
-.content #main-projects-grid #item-3-descr-projects {
-  grid-area: 6/1/11/2;
+.content #main-projects-grid #item-9-bg-projects,
+.content #main-projects-grid #item-9-descr-projects {
+  grid-area: 6/1/12/2;
 }
-.content #main-projects-grid #item-3-bg-projects {
-  background-image: url("/assets/images/a_drive_home.jpg");
-}
-.content #main-projects-grid #item-4-bg-projects,
-.content #main-projects-grid #item-4-descr-projects {
-  grid-area: 6/2/13/3;
-}
-.content #main-projects-grid #item-4-bg-projects {
-  background-image: url("/assets/images/algorithms_thumbnail.jpg");
-}
-.content #main-projects-grid #item-5-bg-projects,
-.content #main-projects-grid #item-5-descr-projects {
-  grid-area: 11/1/18/2;
-}
-.content #main-projects-grid #item-5-bg-projects {
-  background-image: url("/assets/images/celeste_clone_thumbnail.jpg");
-}
-.content #main-projects-grid #item-6-bg-projects,
-.content #main-projects-grid #item-6-descr-projects {
-  grid-area: 13/2/19/3;
-}
-.content #main-projects-grid #item-6-bg-projects {
-  background-image: url("/assets/images/pool_thumbnail.jpg");
-}
-.content #main-projects-grid #item-7-bg-projects,
-.content #main-projects-grid #item-7-descr-projects {
-  grid-area: 18/1/24/2;
-}
-.content #main-projects-grid #item-7-bg-projects {
-  background-image: url("/assets/images/tobitai_thumbnail.jpg");
+.content #main-projects-grid #item-9-bg-projects {
+  background-image: url("/assets/images/tower_defense_thumbnail.jpg");
 }
 .content #main-projects-grid #item-8-bg-projects,
 .content #main-projects-grid #item-8-descr-projects {
-  grid-area: 19/2/25/3;
+  grid-area: 12/1/17/2;
 }
 .content #main-projects-grid #item-8-bg-projects {
+  background-image: url("/assets/images/projectx_thumbnail.png");
+}
+.content #main-projects-grid #item-7-bg-projects,
+.content #main-projects-grid #item-7-descr-projects {
+  grid-area: 6/2/11/3;
+}
+.content #main-projects-grid #item-7-bg-projects {
+  background-image: url("/assets/images/battle_game_thumbnail.jpg");
+}
+.content #main-projects-grid #item-6-bg-projects,
+.content #main-projects-grid #item-6-descr-projects {
+  grid-area: 17/1/21/2;
+}
+.content #main-projects-grid #item-6-bg-projects {
+  background-image: url("/assets/images/a_drive_home.jpg");
+}
+.content #main-projects-grid #item-5-bg-projects,
+.content #main-projects-grid #item-5-descr-projects {
+  grid-area: 11/2/18/3;
+}
+.content #main-projects-grid #item-5-bg-projects {
+  background-image: url("/assets/images/algorithms_thumbnail.jpg");
+}
+.content #main-projects-grid #item-4-bg-projects,
+.content #main-projects-grid #item-4-descr-projects {
+  grid-area: 21/1/28/2;
+}
+.content #main-projects-grid #item-4-bg-projects {
+  background-image: url("/assets/images/celeste_clone_thumbnail.jpg");
+}
+.content #main-projects-grid #item-3-bg-projects,
+.content #main-projects-grid #item-3-descr-projects {
+  grid-area: 18/2/24/3;
+}
+.content #main-projects-grid #item-3-bg-projects {
+  background-image: url("/assets/images/pool_thumbnail.jpg");
+}
+.content #main-projects-grid #item-2-bg-projects,
+.content #main-projects-grid #item-2-descr-projects {
+  grid-area: 28/1/34/2;
+}
+.content #main-projects-grid #item-2-bg-projects {
+  background-image: url("/assets/images/tobitai_thumbnail.jpg");
+}
+.content #main-projects-grid #item-1-bg-projects,
+.content #main-projects-grid #item-1-descr-projects {
+  grid-area: 24/2/30/3;
+}
+.content #main-projects-grid #item-1-bg-projects {
   background-image: url("/assets/images/dj_rush_thumbnail.jpg");
 }/*# sourceMappingURL=projects.css.map */
