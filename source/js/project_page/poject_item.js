@@ -1,5 +1,12 @@
 $(document).ready(function () {
 
+    // Preload the GIF
+    $("[data-demo-src]").each(function () {
+        let gifSrc = $(this).data("demo-src");
+        let img = new Image();
+        img.src = gifSrc;
+    });
+
     $('.item-bg-projects').each(function () {
         $(this).data('originalWidth', $(this).width());
         $(this).data('originalHeight', $(this).height());
