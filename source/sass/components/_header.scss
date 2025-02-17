@@ -1,54 +1,60 @@
 .header {
 
-    height: 30vh;
-    margin-bottom: 5vh;
+    height: 10vh;
+    margin-top: 10vh;
+    margin-bottom: 20vh;
 
     @include flex-display($flex-dir: column, $justify-content: center, $align-items: center);
 
     font-family: $secondary-font;
 
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+
     .title-cont {
 
-        position: relative;
-
-        @include flex-width-height($width: 50%, $height: 30%);
+        @include flex-width-height($width: 60%, $height: 100%);
 
         @include flex-display($flex-dir: row, $justify-content: space-around, $align-items: center);
 
-        div {
+        position: relative;
+
+        .blur-background {
+            border-radius: 0px 0px 50px 50px;
+        }
+
+        .title-cont {
             height: 100%;
+            width: fit-content;
 
             @include flex-display($flex-dir: column, $justify-content: center, $align-items: center);
-        }
 
-        h6,
-        h4 {
-            position: relative;
-        }
+            justify-content: center;
 
-        .possible-title-cont {
-            justify-content: flex-end;
+            .possible-title,
+            .current-title {
+                position: relative;
 
-            h6 {
                 a {
                     text-decoration: none;
                     color: inherit;
                 }
             }
 
-            hr {
-                position: relative;
+            .possible-title {
+                color: $main-text-color;
 
-                border-color: $secondary-text-color;
-
-                display: none;
+                &:hover {
+                    color: $secondary-text-color;
+                }
             }
-        }
 
-        h4 {
-            color: $secondary-text-color;
+            .current-title {
+                color: $secondary-text-color;
 
-            text-align: center;
+                text-align: center;
+            }
         }
 
     }

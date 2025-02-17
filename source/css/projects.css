@@ -107,47 +107,56 @@ h6 {
 }
 
 .header {
-  height: 30vh;
-  margin-bottom: 5vh;
+  height: 10vh;
+  margin-top: 10vh;
+  margin-bottom: 20vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-family: "IBM Plex Mono", monospace;
+  position: sticky;
+  top: 0px;
+  z-index: 1;
 }
 .header .title-cont {
-  position: relative;
-  width: 50%;
-  height: 30%;
+  width: 60%;
+  height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  position: relative;
 }
-.header .title-cont div {
+.header .title-cont .blur-background {
+  border-radius: 0px 0px 50px 50px;
+}
+.header .title-cont .title-cont {
   height: 100%;
+  width: -moz-fit-content;
+  width: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  justify-content: center;
 }
-.header .title-cont h6,
-.header .title-cont h4 {
+.header .title-cont .title-cont .possible-title,
+.header .title-cont .title-cont .current-title {
   position: relative;
 }
-.header .title-cont .possible-title-cont {
-  justify-content: flex-end;
-}
-.header .title-cont .possible-title-cont h6 a {
+.header .title-cont .title-cont .possible-title a,
+.header .title-cont .title-cont .current-title a {
   text-decoration: none;
   color: inherit;
 }
-.header .title-cont .possible-title-cont hr {
-  position: relative;
-  border-color: #edae49;
-  display: none;
+.header .title-cont .title-cont .possible-title {
+  color: #FFFFFF;
 }
-.header .title-cont h4 {
+.header .title-cont .title-cont .possible-title:hover {
+  color: #edae49;
+}
+.header .title-cont .title-cont .current-title {
   color: #edae49;
   text-align: center;
 }

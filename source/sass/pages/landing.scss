@@ -84,7 +84,7 @@
 
     // border: 1px solid yellow;
 
-    @include flex-width-height($width: 25%, $height: 30%);
+    @include flex-width-height($width: 25%, $height: 35%);
 
     @include flex-display($flex-dir: column, $justify-content: space-between, $align-items: flex-end);
 
