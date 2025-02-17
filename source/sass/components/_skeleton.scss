@@ -6,6 +6,8 @@
     main {
         @include flex-display($justify-content: center);
 
+        width: 99%;
+
         .main-cont {
             width: 48%;
 

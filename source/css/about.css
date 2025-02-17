@@ -164,6 +164,7 @@ h6 {
   flex-direction: row;
   justify-content: center;
   align-items: normal;
+  width: 99%;
 }
 .content main .main-cont {
   width: 48%;
