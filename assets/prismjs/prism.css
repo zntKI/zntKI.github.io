@@ -180,13 +180,12 @@ pre[class*=language-].line-numbers>code {
 }
 
 main a {
-    color: white;
+    color: #edae49;
     font-weight: bold;
     text-decoration: none;
 }
 
 main a:hover {
-    color: #edae49;
     text-decoration: underline;
 }
 
@@ -196,24 +195,25 @@ mark {
     background-color: inherit;
 }
 
+mark.very-important,
 mark:hover {
     color: #edae49;
 }
 
-span.show-on-hover {
+span.text-icon {
     white-space: nowrap;
 }
 
-span.show-on-hover>* {
-    opacity: 0;
-}
-
-span.show-on-hover:hover>* {
+span.text-icon>* {
     opacity: 1;
 }
 
+/* span.show-on-hover:hover>* {
+    opacity: 1;
+} */
+
 pre[class*=language-].style-2 {
-    max-height: 400px;
+    max-height: 600px;
 
     background-color: black;
 

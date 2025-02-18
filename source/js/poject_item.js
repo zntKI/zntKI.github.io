@@ -62,6 +62,7 @@ $(document).ready(function () {
             const height = width / aspectRatio; // Calculate height based on width and aspect ratio
 
             $element.height(height);
+            $element.siblings().height(height);
         };
     }
 

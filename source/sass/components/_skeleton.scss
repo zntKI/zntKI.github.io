@@ -1,56 +1,3 @@
-.content {
-    @include flex-display($flex-dir: row, $justify-content: flex-end, $align-items: flex-start);
-
-    flex-wrap: wrap;
-
-    main {
-        @include flex-display($justify-content: center);
-
-        width: 99%;
-
-        .main-cont {
-            width: 48%;
-
-            justify-content: center;
-        }
-    }
-
-    .progress {
-        width: 1%;
-
-        position: sticky;
-        top: 10px;
-
-        @include flex-display($justify-content: flex-end);
-
-        .progress-bar-container {
-            @include flex-width-height($width: 10px, $height: 90vh);
-
-            border: none;
-            border-radius: 30px;
-
-            transition: width 0.05s, border 0.05s;
-
-            &:hover {
-                width: 13px;
-                border: 1px solid $main-text-color;
-
-                .progress-bar {
-                    background-color: $secondary-text-color;
-                }
-            }
-
-            .progress-bar {
-                width: 100%;
-                height: 0%;
-
-                border-radius: 30px;
-
-                background-color: $secondary-text-color-darker;
-            }
-        }
-    }
-
     .footer {
         margin: 0 auto;
 
@@ -154,4 +101,3 @@
             }
         }
     }
-}

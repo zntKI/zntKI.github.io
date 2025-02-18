@@ -21,7 +21,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scrollbar-width: none;
+  overflow-x: clip;
 }
 
 body {
@@ -31,8 +31,20 @@ body {
   background-color: #031725;
 }
 
-body::-webkit-scrollbar {
-  display: none;
+::-webkit-scrollbar {
+  width: 0.8em;
+}
+
+::-webkit-scrollbar-track {
+  margin-block: 0.5em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #edae49;
+  border-radius: 100vw;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #bd8f43;
 }
 
 p {
@@ -161,54 +173,7 @@ h6 {
   text-align: center;
 }
 
-.content {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: flex-start;
-  flex-wrap: wrap;
-}
-.content main {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: normal;
-  width: 99%;
-}
-.content main .main-cont {
-  width: 48%;
-  justify-content: center;
-}
-.content .progress {
-  width: 1%;
-  position: sticky;
-  top: 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: normal;
-}
-.content .progress .progress-bar-container {
-  width: 10px;
-  height: 90vh;
-  border: none;
-  border-radius: 30px;
-  transition: width 0.05s, border 0.05s;
-}
-.content .progress .progress-bar-container:hover {
-  width: 13px;
-  border: 1px solid #FFFFFF;
-}
-.content .progress .progress-bar-container:hover .progress-bar {
-  background-color: #edae49;
-}
-.content .progress .progress-bar-container .progress-bar {
-  width: 100%;
-  height: 0%;
-  border-radius: 30px;
-  background-color: #bd8f43;
-}
-.content .footer {
+.footer {
   margin: 0 auto;
   width: 50%;
   height: 15vh;
@@ -219,7 +184,7 @@ h6 {
   justify-content: center;
   align-items: center;
 }
-.content .footer .footer-cont {
+.footer .footer-cont {
   position: relative;
   z-index: 2;
   width: 100%;
@@ -229,7 +194,7 @@ h6 {
   justify-content: space-between;
   align-items: center;
 }
-.content .footer .footer-cont .contact-cont {
+.footer .footer-cont .contact-cont {
   width: 60%;
   height: 100%;
   display: flex;
@@ -237,7 +202,7 @@ h6 {
   justify-content: space-between;
   align-items: center;
 }
-.content .footer .footer-cont .contact-cont .personal-info {
+.footer .footer-cont .contact-cont .personal-info {
   height: 100%;
   gap: 10%;
   display: flex;
@@ -245,30 +210,30 @@ h6 {
   justify-content: center;
   align-items: flex-start;
 }
-.content .footer .footer-cont .contact-cont .personal-info h6 {
+.footer .footer-cont .contact-cont .personal-info h6 {
   color: #edae49;
 }
-.content .footer .footer-cont .contact-cont .personal-info hr {
+.footer .footer-cont .contact-cont .personal-info hr {
   width: 50%;
   height: 0px;
 }
-.content .footer .footer-cont .contact-cont .personal-info p {
+.footer .footer-cont .contact-cont .personal-info p {
   font-size: 1.2rem;
 }
-.content .footer .footer-cont .contact-cont hr {
+.footer .footer-cont .contact-cont hr {
   height: 50%;
 }
-.content .footer .footer-cont .contact-cont .icons-cont {
+.footer .footer-cont .contact-cont .icons-cont {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 10%;
 }
-.content .footer .footer-cont .contact-cont svg:hover path {
+.footer .footer-cont .contact-cont svg:hover path {
   fill: #edae49;
 }
-.content .footer .footer-cont .nav-next-page {
+.footer .footer-cont .nav-next-page {
   height: 100%;
   gap: 10%;
   display: flex;
@@ -276,20 +241,20 @@ h6 {
   justify-content: center;
   align-items: flex-start;
 }
-.content .footer .footer-cont .nav-next-page h5 {
+.footer .footer-cont .nav-next-page h5 {
   color: #edae49;
 }
-.content .footer .footer-cont .nav-next-page p {
+.footer .footer-cont .nav-next-page p {
   position: relative;
 }
-.content .footer .footer-cont .nav-next-page p a {
+.footer .footer-cont .nav-next-page p a {
   text-decoration: none;
   color: inherit;
 }
-.content .footer .footer-cont .nav-next-page p a:hover {
+.footer .footer-cont .nav-next-page p a:hover {
   color: #edae49;
 }
-.content .footer .footer-cont .nav-next-page p svg {
+.footer .footer-cont .nav-next-page p svg {
   width: 60px;
   height: 60px;
   position: absolute;
@@ -300,11 +265,13 @@ h6 {
   animation: move-arrow 1.5s infinite ease-in-out;
 }
 
-.content #nav-projects {
+#nav-projects {
   position: sticky;
   top: 10px;
 }
-.content #main-projects {
+
+#main-projects {
+  margin: 0 auto;
   width: 70%;
   display: flex;
   flex-direction: column;
@@ -312,15 +279,14 @@ h6 {
   align-items: center;
   row-gap: 50px;
 }
-.content #main-projects .item {
+#main-projects .item {
   width: 100%;
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-around;
   align-items: center;
-  flex-wrap: wrap;
 }
-.content #main-projects .item .item-bg-projects {
+#main-projects .item .item-bg-projects {
   width: 50%;
   height: 100%;
   border-radius: 10px;
@@ -329,33 +295,36 @@ h6 {
   background-size: cover;
   box-shadow: 20px 10px 50px black;
 }
-.content #main-projects .item .item-bg-projects:hover {
+#main-projects .item .item-bg-projects:hover {
   cursor: url("/assets/icons/github-brands-solid.svg"), auto;
 }
-.content #main-projects .item .item-descr-projects {
+#main-projects .item .item-descr-projects {
   width: 40%;
   height: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   align-items: center;
 }
-.content #main-projects .item .item-descr-projects h6 {
-  width: 100%;
-  flex-grow: 1;
-}
-.content #main-projects .item .item-descr-projects h6 a {
-  text-decoration: none;
+#main-projects .item .item-descr-projects a {
   color: #edae49;
 }
-.content #main-projects .item .item-descr-projects h6 a:hover {
-  cursor: url("/assets/icons/github-brands-solid.svg"), auto;
-}
-.content #main-projects .item .item-descr-projects p.p-descr-bigger {
+#main-projects .item .item-descr-projects h6 {
   width: 100%;
   flex-grow: 1;
 }
-.content #main-projects .item .item-descr-projects .p-descr-section {
+#main-projects .item .item-descr-projects h6 a {
+  text-decoration: none;
+}
+#main-projects .item .item-descr-projects h6 a:hover {
+  cursor: url("/assets/icons/github-brands-solid.svg"), auto;
+}
+#main-projects .item .item-descr-projects p.p-descr-bigger {
+  width: 100%;
+  flex-grow: 1;
+}
+#main-projects .item .item-descr-projects .p-descr-section {
   width: 100%;
   flex-grow: 2;
   display: flex;
@@ -363,25 +332,28 @@ h6 {
   justify-content: space-around;
   align-items: normal;
 }
-.content #main-projects .item .item-descr-projects .p-descr-section div {
+#main-projects .item .item-descr-projects .p-descr-section div {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.content #main-projects .item .item-descr-projects .p-descr-section div:first-child {
+#main-projects .item .item-descr-projects .p-descr-section div:first-child {
   width: 30%;
   height: 100%;
   text-align: center;
 }
-.content #main-projects .item .item-descr-projects .p-descr-section div:last-child {
+#main-projects .item .item-descr-projects .p-descr-section div:last-child {
   width: 60%;
   height: 100%;
   text-align: center;
 }
-.content #main-projects .item .item-descr-projects p.p-descr-smaller {
+#main-projects .item .item-descr-projects p.p-descr-smaller {
   font-size: 1rem;
 }
-.content #main-projects .item .item-descr-projects hr {
+#main-projects .item .item-descr-projects p.p-descr-smaller a:hover {
+  cursor: url("/assets/icons/github-brands-solid.svg"), auto;
+}
+#main-projects .item .item-descr-projects hr {
   width: 100%;
 }/*# sourceMappingURL=projects.css.map */

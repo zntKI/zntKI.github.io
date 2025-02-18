@@ -14,7 +14,7 @@ body {
     padding: 0;
     box-sizing: border-box;
 
-    scrollbar-width: none;
+    overflow-x: clip;
 }
 
 body {
@@ -26,8 +26,21 @@ body {
     background-color: $bg-color;
 }
 
-body::-webkit-scrollbar {
-    display: none;
+::-webkit-scrollbar {
+    width: 0.8em;
+}
+
+::-webkit-scrollbar-track {
+    margin-block: 0.5em;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $secondary-text-color;
+    border-radius: 100vw;
+
+    &:hover {
+        background: $secondary-text-color-darker;
+    }
 }
 
 p {

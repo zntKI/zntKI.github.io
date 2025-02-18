@@ -10,55 +10,44 @@
 // TODO:
 // Fix resizing issue with the second code block - make it get smaller in width when window resized
 
-.content {
-    main {
+#output-outer-cont {
 
-        width: 98%;
+    width: fit-content;
 
-        @include flex-display($flex-dir: column, $justify-content: flex-start, $align-items: center);
+    @include flex-display($flex-dir: row, $justify-content: center, $align-items: center);
 
-        #output-outer-cont {
+    img {
+        // position: absolute;
+        align-self: center;
 
-            width: fit-content;
-            margin-top: 100px;
+        // border: 1px solid red;
 
-            @include flex-display($flex-dir: row, $justify-content: center, $align-items: center);
+        border-radius: 5%;
+        width: 20%;
+        height: auto;
 
-            img {
-                // position: absolute;
-                align-self: center;
+        box-shadow: 0 0 20px 1px black;
 
-                // border: 1px solid red;
+        margin-right: 50px;
+    }
 
-                border-radius: 50%;
-                width: 0%;
-                height: auto;
+    #output-inner-cont {
 
-                box-shadow: 0 0 20px 1px black;
+        width: 60%;
 
-                margin-right: 50px;
-            }
+        @include flex-display($flex-dir: column, $justify-content: flex-start, $align-items: flex-start);
 
-            #output-inner-cont {
+        h6 {
+            font-family: $secondary-font;
+            font-weight: 800;
 
-                width: 60%;
+            color: $main-text-color;
+        }
 
-                @include flex-display($flex-dir: column, $justify-content: flex-start, $align-items: flex-start);
-
-                p {
-                    font-family: $secondary-font;
-                    font-weight: 800;
-
-                    color: $main-text-color;
-                }
-
-                #output {
-                    width: 100%;
-                }
-
-            }
-
+        #output {
+            width: 100%;
         }
 
     }
+
 }

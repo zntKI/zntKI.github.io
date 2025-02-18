@@ -7,115 +7,117 @@
 @import "../components/header";
 @import "../components/skeleton";
 
-.content {
+#nav-projects {
 
-    #nav-projects {
+    position: sticky;
+    top: 10px;
 
-        position: sticky;
-        top: 10px;
+}
 
-    }
+#main-projects {
 
-    #main-projects {
+    margin: 0 auto;
+    width: 70%;
 
-        width: 70%;
+    @include flex-display($flex-dir: column, $align-items: center);
 
-        @include flex-display($flex-dir: column, $justify-content: flex-start, $align-items: center);
+    row-gap: 50px;
 
-        row-gap: 50px;
+    .item {
 
-        .item {
+        width: 100%;
 
-            width: 100%;
+        @include flex-display($flex-dir: row-reverse, $justify-content: space-around, $align-items: center);
 
-            @include flex-display($flex-dir: row-reverse, $justify-content: space-around, $align-items: center);
+        .item-bg-projects {
 
-            flex-wrap: wrap;
+            @include flex-width-height($width: 50%, $height: 100%);
 
-            .item-bg-projects {
+            // min-width: 500px;
 
-                @include flex-width-height($width: 50%, $height: 100%);
+            border-radius: 10px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
 
-                // min-width: 500px;
+            box-shadow: 20px 10px 50px black;
 
-                border-radius: 10px;
-                background-repeat: no-repeat;
-                background-position: center;
-                background-size: cover;
+            &:hover {
+                cursor: url("/assets/icons/github-brands-solid.svg"), auto;
+            }
+        }
 
-                box-shadow: 20px 10px 50px black;
+        .item-descr-projects {
 
-                &:hover {
+            @include flex-width-height($width: 40%, $height: 100%);
+
+            position: relative; // for blurred bg
+
+            @include flex-display($flex-dir: column, $justify-content: space-around, $align-items: center);
+
+            a {
+                color: $secondary-text-color;
+            }
+
+            h6 {
+                a {
+                    text-decoration: none;
+
+                    &:hover {
+                        cursor: url("/assets/icons/github-brands-solid.svg"), auto;
+                    }
+                }
+
+                width: 100%;
+
+                flex-grow: 1;
+            }
+
+            p.p-descr-bigger {
+                width: 100%;
+
+                flex-grow: 1;
+            }
+
+            .p-descr-section {
+                width: 100%;
+                flex-grow: 2;
+
+                @include flex-display($justify-content: space-around);
+
+                div {
+                    @include flex-display($flex-dir: column, $justify-content: center, $align-items: center);
+                }
+
+                div:first-child {
+                    // Title
+                    @include flex-width-height($width: 30%);
+
+                    text-align: center;
+                }
+
+                div:last-child {
+                    // Descr
+                    @include flex-width-height($width: 60%);
+
+                    text-align: center;
+                }
+            }
+
+            p.p-descr-smaller {
+                font-size: $default-font-size;
+
+                a:hover {
                     cursor: url("/assets/icons/github-brands-solid.svg"), auto;
                 }
             }
 
-            .item-descr-projects {
-
-                @include flex-width-height($width: 40%, $height: 100%);
-                position: relative;
-
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-
-                h6 {
-                    a {
-                        text-decoration: none;
-                        color: $secondary-text-color;
-
-                        &:hover {
-                            cursor: url("/assets/icons/github-brands-solid.svg"), auto;
-                        }
-                    }
-
-                    width: 100%;
-
-                    flex-grow: 1;
-                }
-
-                p.p-descr-bigger {
-                    width: 100%;
-
-                    flex-grow: 1;
-                }
-
-                .p-descr-section {
-                    width: 100%;
-                    flex-grow: 2;
-
-                    @include flex-display($justify-content: space-around);
-
-                    div {
-                        @include flex-display($flex-dir: column, $justify-content: center, $align-items: center);
-                    }
-
-                    div:first-child {
-                        // Title
-                        @include flex-width-height($width: 30%);
-
-                        text-align: center;
-                    }
-
-                    div:last-child {
-                        // Descr
-                        @include flex-width-height($width: 60%);
-
-                        text-align: center;
-                    }
-                }
-
-                p.p-descr-smaller {
-                    font-size: $default-font-size;
-                }
-
-                hr {
-                    width: 100%;
-                }
+            hr {
+                width: 100%;
             }
         }
-
     }
+
 }
 
 // mobile
