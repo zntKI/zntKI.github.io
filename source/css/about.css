@@ -398,6 +398,14 @@ h6 {
   main #output-outer-cont #output-inner-cont {
     width: 80%;
   }
+  main #output-outer-cont #output-inner-cont #output pre[class*=language-] {
+    white-space: pre-wrap !important;
+    /* Allows wrapping */
+    word-wrap: break-word;
+    /* Ensures long words break */
+    overflow-wrap: break-word;
+    /* Additional safety */
+  }
 }
 @media (max-width: 480px) {
   main #output-outer-cont img {
