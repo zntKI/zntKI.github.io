@@ -1,50 +1,134 @@
-    .footer {
-        margin: 0 auto;
+.header {
 
-        width: 50%;
-        height: 15vh;
+    height: 108px;
+    margin-top: 108px;
+    margin-bottom: 216px;
 
-        margin-top: 20vh;
-        margin-bottom: 10vh;
+    @include flex-display($flex-dir: column, $justify-content: center, $align-items: center);
 
-        @include flex-display($flex-dir: column, $justify-content: center, $align-items: center);
+    font-family: $secondary-font;
 
-        .footer-cont {
-            position: relative;
-            z-index: 2;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
 
-            width: 100%;
+    .title-outer-cont {
+
+        @include flex-width-height($width: 60%, $height: 100%);
+
+        @include flex-display($flex-dir: row, $justify-content: center, $align-items: center);
+
+        column-gap: 1vw;
+
+        position: relative;
+
+        .blur-background {
+            border-radius: 0px 0px 50px 50px;
+        }
+
+        .title-cont {
             height: 100%;
+            width: fit-content;
+
+            @include flex-display($flex-dir: column, $justify-content: center, $align-items: center);
+
+            justify-content: center;
+
+            .possible-title,
+            .current-title {
+                position: relative;
+
+                a {
+                    text-decoration: none;
+                    color: inherit;
+                }
+            }
+
+            .possible-title {
+                color: $main-text-color;
+
+                &:hover {
+                    color: $secondary-text-color;
+                }
+            }
+
+            .current-title {
+                color: $secondary-text-color;
+
+                text-align: center;
+            }
+        }
+
+    }
+
+}
+
+
+.footer {
+    margin: 0 auto;
+
+    width: 50%;
+    height: 162px;
+
+    margin-top: 216px;
+    margin-bottom: 108px;
+
+    // @include flex-display($flex-dir: column, $justify-content: center, $align-items: center);
+
+    .footer-cont {
+        position: relative;
+        z-index: 2;
+
+        width: 100%;
+        height: 100%;
+
+        @include flex-display($flex-dir: row, $justify-content: space-between, $align-items: center);
+        // flex-wrap: wrap;
+
+        .contact-cont {
+
+            width: 60%;
+            height: 100%;
+
+            // min-width: 215px;
 
             @include flex-display($flex-dir: row, $justify-content: space-between, $align-items: center);
 
-            .contact-cont {
+            // flex-wrap: wrap;
+            // align-content: center;
 
-                width: 60%;
+            .personal-info {
+
+                // width: 60%;
                 height: 100%;
 
-                @include flex-display($flex-dir: row, $justify-content: space-between, $align-items: center);
+                // min-width: inherit;
+                gap: 10%;
 
-                .personal-info {
+                @include flex-display($flex-dir: column, $justify-content: center, $align-items: flex-start);
 
-                    height: 100%;
-                    gap: 10%;
-
-                    @include flex-display($flex-dir: column, $justify-content: center, $align-items: flex-start);
-
-                    h6 {
-                        color: $secondary-text-color;
-                    }
-
-                    hr {
-                        width: 50%;
-                        height: 0px;
-                    }
-
-                    p {
-                        font-size: $default-font-size * 1.2;
-                    }
+                h6 {
+                    color: $secondary-text-color;
                 }
+
+                hr {
+                    width: 50%;
+                    height: 0px;
+                }
+
+                p {
+                    font-size: $default-font-size * 1.2;
+                }
+            }
+
+            .contact-info {
+
+                width: 30%;
+                height: 60%;
+
+                min-width: 150px;
+
+                @include flex-display($flex-dir: row, $justify-content: space-between, $align-items: center);
 
                 hr {
                     height: 50%;
@@ -53,7 +137,7 @@
                 .icons-cont {
                     @include flex-display($flex-dir: row, $justify-content: center, $align-items: center);
 
-                    gap: 10%;
+                    // gap: 10%;
                 }
 
                 svg:hover {
@@ -61,43 +145,163 @@
                         fill: $secondary-text-color;
                     }
                 }
+
             }
 
-            .nav-next-page {
-                height: 100%;
-                gap: 10%;
+        }
 
-                @include flex-display($flex-dir: column, $justify-content: center, $align-items: flex-start);
+        .nav-next-page {
+            height: 100%;
+            gap: 10%;
 
-                h5 {
-                    color: $secondary-text-color;
+            @include flex-display($flex-dir: column, $justify-content: center, $align-items: flex-start);
+
+            h5 {
+                color: $secondary-text-color;
+            }
+
+            p {
+                position: relative;
+
+                a {
+                    text-decoration: none;
+                    color: inherit;
+
+                    &:hover {
+                        color: $secondary-text-color;
+                    }
                 }
 
-                p {
-                    position: relative;
+                svg {
+                    width: 60px;
+                    height: 60px;
 
-                    a {
-                        text-decoration: none;
-                        color: inherit;
+                    position: absolute;
+                    transform-origin: left center;
+                    transform: translateY(-50%);
+                    right: -70px;
+                    top: 50%;
 
-                        &:hover {
-                            color: $secondary-text-color;
-                        }
-                    }
-
-                    svg {
-                        width: 60px;
-                        height: 60px;
-
-                        position: absolute;
-                        transform-origin: left center;
-                        transform: translateY(-50%);
-                        right: -70px;
-                        top: 50%;
-
-                        animation: move-arrow 1.5s infinite ease-in-out;
-                    }
+                    animation: move-arrow 1.5s infinite ease-in-out;
                 }
             }
         }
     }
+}
+
+@media (max-width: 480px) {
+
+    .header {
+
+        height: fit-content; // For the blurred bg correct dimensions
+
+        margin-top: 10px;
+        margin-bottom: 100px;
+
+        .title-outer-cont {
+
+            .blur-background {
+                border-radius: 0px 0px 20px 20px;
+            }
+
+            width: 100%;
+            flex-wrap: wrap;
+
+            column-gap: 5vw;
+
+            align-content: center; // At the center line of the header element
+
+            .title-cont {
+
+                min-height: 50px;
+
+            }
+
+        }
+
+    }
+
+    .footer {
+
+        width: 60%;
+        height: 400px;
+
+        margin-top: 150px;
+        margin-bottom: 50px;
+
+        .footer-cont {
+
+            @include flex-display($flex-dir: column, $justify-content: center, $align-items: center);
+
+            row-gap: 10%;
+
+            .contact-cont {
+
+                width: 100%;
+                height: 60%;
+
+                @include flex-display($flex-dir: column, $justify-content: space-between, $align-items: center);
+
+                row-gap: 10px;
+
+            }
+
+            .nav-next-page {
+
+                height: 30%;
+
+                align-self: flex-start;
+
+            }
+
+        }
+
+    }
+
+}
+
+// tablets
+@media (min-width: 481px) and (max-width: 1280px) {
+
+    .header {
+
+        height: 60px;
+        margin-top: 50px;
+        margin-bottom: 100px;
+
+        .title-outer-cont {
+
+            width: 100%;
+            column-gap: 1vw;
+
+            .blur-background {
+                border-radius: 0px 0px 20px 20px;
+            }
+
+        }
+
+    }
+
+    .footer {
+
+        width: 60%;
+        height: 250px;
+
+        margin-top: 150px;
+        margin-bottom: 50px;
+
+        .footer-cont {
+
+            @include flex-display($flex-dir: column, $justify-content: center, $align-items: center);
+
+            .contact-cont {
+
+                width: 100%;
+
+            }
+
+        }
+
+    }
+
+}

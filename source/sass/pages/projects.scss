@@ -4,7 +4,6 @@
 @import "../components/spotlight";
 @import "../components/blurred_bg";
 
-@import "../components/header";
 @import "../components/skeleton";
 
 #nav-projects {
@@ -104,6 +103,16 @@
                 }
             }
 
+            .p-descr-section:last-child {
+
+                div {
+
+                    width: 100%;
+
+                }
+
+            }
+
             p.p-descr-smaller {
                 font-size: $default-font-size;
 
@@ -120,8 +129,71 @@
 
 }
 
+// tablet and mobile
+@media (max-width: 1280px) {
+
+    #spotlight {
+        display: none;
+    }
+
+
+    #main-projects {
+
+        row-gap: 100px;
+
+        .item {
+
+            @include flex-display($flex-dir: column, $justify-content: center, $align-items: center);
+            row-gap: 30px;
+
+            .item-bg-projects {
+
+                width: 100%;
+
+            }
+
+            .item-descr-projects {
+
+                width: 100%;
+
+            }
+
+        }
+
+    }
+
+}
+
 // mobile
-@media (max-width: 480px) {}
+@media (max-width: 480px) {
+
+    #main-projects {
+        .item {
+
+            .item-descr-projects {
+
+                height: 400px;
+
+            }
+
+        }
+    }
+
+}
 
 // tablets
-@media (min-width: 481px) and (max-width: 1280px) {}
+@media (min-width: 481px) and (max-width: 1280px) {
+
+    #main-projects {
+        .item {
+
+            .item-descr-projects {
+
+                height: 300px;
+
+            }
+
+        }
+    }
+
+}
