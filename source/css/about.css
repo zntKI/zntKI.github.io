@@ -401,7 +401,7 @@ h6 {
 }
 @media (max-width: 480px) {
   main #output-outer-cont img {
-    width: 40%;
-    max-width: 300px;
+    width: 60%;
+    max-width: 400px;
   }
 }/*# sourceMappingURL=about.css.map */
