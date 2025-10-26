@@ -365,7 +365,7 @@ h6 {
   box-shadow: 0 0 20px 1px black;
 }
 #output-outer-cont #output-inner-cont {
-  width: 60%;
+  width: 70%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
