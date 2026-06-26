@@ -40,10 +40,14 @@
             background-size: cover;
 
             box-shadow: 20px 10px 50px black;
+        }
 
-            &:hover {
-                cursor: url("/assets/icons/github-brands-solid.svg"), auto;
-            }
+        .github-link:hover {
+            cursor: url("/assets/icons/github-brands-solid.svg"), auto;
+        }
+
+        .appstore-link:hover {
+            cursor: url("/assets/icons/store-solid-full.svg"), auto;
         }
 
         .item-descr-projects {
@@ -61,10 +65,6 @@
             h6 {
                 a {
                     text-decoration: none;
-
-                    &:hover {
-                        cursor: url("/assets/icons/github-brands-solid.svg"), auto;
-                    }
                 }
 
                 width: 100%;
@@ -115,10 +115,6 @@
 
             p.p-descr-smaller {
                 font-size: $default-font-size;
-
-                a:hover {
-                    cursor: url("/assets/icons/github-brands-solid.svg"), auto;
-                }
             }
 
             hr {

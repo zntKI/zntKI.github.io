@@ -278,15 +278,15 @@ h6 {
     margin-top: 10px;
     margin-bottom: 100px;
   }
+  .header .title-outer-cont .blur-background {
+    border-radius: 0px 0px 20px 20px;
+  }
   .header .title-outer-cont {
     width: 100%;
     flex-wrap: wrap;
     -moz-column-gap: 5vw;
          column-gap: 5vw;
     align-content: center;
-  }
-  .header .title-outer-cont .blur-background {
-    border-radius: 0px 0px 20px 20px;
   }
   .header .title-outer-cont .title-cont {
     min-height: 50px;

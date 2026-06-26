@@ -278,15 +278,15 @@ h6 {
     margin-top: 10px;
     margin-bottom: 100px;
   }
+  .header .title-outer-cont .blur-background {
+    border-radius: 0px 0px 20px 20px;
+  }
   .header .title-outer-cont {
     width: 100%;
     flex-wrap: wrap;
     -moz-column-gap: 5vw;
          column-gap: 5vw;
     align-content: center;
-  }
-  .header .title-outer-cont .blur-background {
-    border-radius: 0px 0px 20px 20px;
   }
   .header .title-outer-cont .title-cont {
     min-height: 50px;
@@ -378,8 +378,11 @@ h6 {
   background-size: cover;
   box-shadow: 20px 10px 50px black;
 }
-#main-projects .item .item-bg-projects:hover {
+#main-projects .item .github-link:hover {
   cursor: url("/assets/icons/github-brands-solid.svg"), auto;
+}
+#main-projects .item .appstore-link:hover {
+  cursor: url("/assets/icons/store-solid-full.svg"), auto;
 }
 #main-projects .item .item-descr-projects {
   width: 40%;
@@ -393,15 +396,12 @@ h6 {
 #main-projects .item .item-descr-projects a {
   color: #edae49;
 }
-#main-projects .item .item-descr-projects h6 {
-  width: 100%;
-  flex-grow: 1;
-}
 #main-projects .item .item-descr-projects h6 a {
   text-decoration: none;
 }
-#main-projects .item .item-descr-projects h6 a:hover {
-  cursor: url("/assets/icons/github-brands-solid.svg"), auto;
+#main-projects .item .item-descr-projects h6 {
+  width: 100%;
+  flex-grow: 1;
 }
 #main-projects .item .item-descr-projects p.p-descr-bigger {
   width: 100%;
@@ -436,9 +436,6 @@ h6 {
 }
 #main-projects .item .item-descr-projects p.p-descr-smaller {
   font-size: 1rem;
-}
-#main-projects .item .item-descr-projects p.p-descr-smaller a:hover {
-  cursor: url("/assets/icons/github-brands-solid.svg"), auto;
 }
 #main-projects .item .item-descr-projects hr {
   width: 100%;
