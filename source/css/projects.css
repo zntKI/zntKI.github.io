@@ -381,8 +381,11 @@ h6 {
 #main-projects .item .github-link:hover {
   cursor: url("/assets/icons/github-brands-solid.svg"), auto;
 }
+#main-projects .item .googleplaystore-link:hover {
+  cursor: url("/assets/icons/google-play.svg"), auto;
+}
 #main-projects .item .appstore-link:hover {
-  cursor: url("/assets/icons/store-solid-full.svg"), auto;
+  cursor: url("/assets/icons/app-store.svg"), auto;
 }
 #main-projects .item .item-descr-projects {
   width: 40%;

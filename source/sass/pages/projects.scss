@@ -46,8 +46,12 @@
             cursor: url("/assets/icons/github-brands-solid.svg"), auto;
         }
 
+        .googleplaystore-link:hover {
+            cursor: url("/assets/icons/google-play.svg"), auto;
+        }
+
         .appstore-link:hover {
-            cursor: url("/assets/icons/store-solid-full.svg"), auto;
+            cursor: url("/assets/icons/app-store.svg"), auto;
         }
 
         .item-descr-projects {
